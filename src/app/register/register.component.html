@@ -5,19 +5,58 @@
                 <h3 class="mb-0">Register</h3>
             </div>
             <div class="card-body">
-                <form class="form">
+                <form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <!-- Email -->
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input [(ngModel)]="registerUserData.email" name="email" type="text"
-                            class="form-control rounded-0" required>
+                        <input [ngClass]="{'is-invalid': submited && registrationForm.get('email').errors, 
+                        'is-valid': submited && !registrationForm.get('email').errors}" type="text"
+                            class="form-control rounded-0" formControlName="email">
+                            <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+                                <small *ngIf="registrationForm.get('email').errors?.required" class="text-danger">Email is
+                                    required</small>
+                                <small *ngIf="registrationForm.get('email').errors?.pattern" class="text-danger">Email must be
+                                    xxxx.xxxx@gmail.com</small>
+                            </div>
                     </div>
+                    <!-- Password -->
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input [(ngModel)]="registerUserData.password" name="password" type="password"
-                            class="form-control rounded-0" required>
+                        <input [ngClass]="{'is-invalid': submited && registrationForm.get('password').errors, 
+                        'is-valid': submited && !registrationForm.get('password').errors}" type="password"
+                            class="form-control rounded-0" formControlName="password">
+                            <div *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').touched">
+                                <small *ngIf="registrationForm.get('password').errors.required" class="text-danger">Password is
+                                    required</small>
+                                <small *ngIf="registrationForm.get('password').errors.pattern" class="text-danger">Password must be
+                                    eight and different caracters</small>
+                            </div>
                     </div>
-                    <button (click)="registerUser()" type="button"
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input [ngClass]="{'is-invalid': submited && registrationForm.get('name').errors, 
+                        'is-valid': submited && !registrationForm.get('name').errors}" type="text"
+                            class="form-control rounded-0">
+                            <div *ngIf="registrationForm.get('name').invalid && registrationForm.get('name').touched">
+                                <small *ngIf="registrationForm.get('name').errors.required" class="text-danger">Name is
+                                    required</small>
+                            </div>
+                    </div>
+                    <!-- Lastname -->
+
+                    <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input [ngClass]="{'is-invalid': submited && registrationForm.get('lastname').errors, 
+            'is-valid': submited && !registrationForm.get('lastname').errors}" type="text"
+                            class="form-control rounded-0">
+                            <div *ngIf="registrationForm.get('lastname').invalid && registrationForm.get('lastname').touched">
+                                <small *ngIf="registrationForm.get('lastname').errors.required" class="text-danger">Lastame is
+                                    required</small>
+                            </div>
+                    </div>
+                    <button type="submit"
                         class="btn btn-primary float-right mt-2">Register</button>
                 </form>
 
