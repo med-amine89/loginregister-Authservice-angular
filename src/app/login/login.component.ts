@@ -8,12 +8,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public users = [];
+  alertify;
   registrationForm: FormGroup;
   registration: any;
   submited: boolean = false;
 
-  constructor(private _Authservice: AuthService) { }
+  constructor(private authService: AuthService,
+    ) { }
 
   ngOnInit(): void {
 
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
     if (this.registrationForm.value.invalid) {
       return;
     }
+    const user = this.authService.authUser(this.registrationForm.value);
+   
   }
-
+  
 }

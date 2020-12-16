@@ -12,12 +12,13 @@
                         <input [ngClass]="{'is-invalid': submited && registrationForm.get('email').errors, 
                         'is-valid': submited && !registrationForm.get('email').errors}" type="text"
                             class="form-control rounded-0" formControlName="email">
-                            <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
-                                <small *ngIf="registrationForm.get('email').errors?.required" class="text-danger">Email is
-                                    required</small>
-                                <small *ngIf="registrationForm.get('email').errors?.pattern" class="text-danger">Email must be
-                                    xxxx.xxxx@gmail.com</small>
-                            </div>
+                        <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+                            <small *ngIf="registrationForm.get('email').errors?.required" class="text-danger">Email is
+                                required</small>
+                            <small *ngIf="registrationForm.get('email').errors?.pattern" class="text-danger">Email must
+                                be
+                                xxxx.xxxx@gmail.com</small>
+                        </div>
                     </div>
                     <!-- Password -->
 
@@ -26,23 +27,26 @@
                         <input [ngClass]="{'is-invalid': submited && registrationForm.get('password').errors, 
                         'is-valid': submited && !registrationForm.get('password').errors}" type="password"
                             class="form-control rounded-0" formControlName="password">
-                            <div *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').touched">
-                                <small *ngIf="registrationForm.get('password').errors.required" class="text-danger">Password is
-                                    required</small>
-                                <small *ngIf="registrationForm.get('password').errors.pattern" class="text-danger">Password must be
-                                    eight and different caracters</small>
-                            </div>
+                        <div
+                            *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').touched">
+                            <small *ngIf="registrationForm.get('password').errors.required" class="text-danger">Password
+                                is
+                                required</small>
+                            <small *ngIf="registrationForm.get('password').errors.pattern" class="text-danger">Password
+                                must be
+                                eight and different caracters</small>
+                        </div>
                     </div>
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input [ngClass]="{'is-invalid': submited && registrationForm.get('name').errors, 
                         'is-valid': submited && !registrationForm.get('name').errors}" type="text"
-                            class="form-control rounded-0">
-                            <div *ngIf="registrationForm.get('name').invalid && registrationForm.get('name').touched">
-                                <small *ngIf="registrationForm.get('name').errors.required" class="text-danger">Name is
-                                    required</small>
-                            </div>
+                            class="form-control rounded-0" formControlName="name">
+                        <div *ngIf="registrationForm.get('name').invalid && registrationForm.get('name').touched">
+                            <small *ngIf="registrationForm.get('name').errors.required" class="text-danger">Name is
+                                required</small>
+                        </div>
                     </div>
                     <!-- Lastname -->
 
@@ -50,14 +54,14 @@
                         <label for="lastname">Lastname</label>
                         <input [ngClass]="{'is-invalid': submited && registrationForm.get('lastname').errors, 
             'is-valid': submited && !registrationForm.get('lastname').errors}" type="text"
-                            class="form-control rounded-0">
-                            <div *ngIf="registrationForm.get('lastname').invalid && registrationForm.get('lastname').touched">
-                                <small *ngIf="registrationForm.get('lastname').errors.required" class="text-danger">Lastame is
-                                    required</small>
-                            </div>
+                            class="form-control rounded-0" formControlName="lastname">
+                        <div
+                            *ngIf="registrationForm.get('lastname').invalid && registrationForm.get('lastname').touched">
+                            <small *ngIf="registrationForm.get('lastname').errors.required" class="text-danger">Lastame
+                                is required</small>
+                        </div>
                     </div>
-                    <button type="submit"
-                        class="btn btn-primary float-right mt-2">Register</button>
+                    <button type="submit" class="btn btn-primary float-right mt-2">Register</button>
                 </form>
 
             </div>
