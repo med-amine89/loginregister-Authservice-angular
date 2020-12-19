@@ -19,6 +19,10 @@ export class UsersService {
     return this.http.post('https://jsonplaceholder.typicode.com/users', user)
   }
 
+  getUserById(id: any) {
+    return this.http.get('https://jsonplaceholder.typicode.com/users'+ id)
+  }
+
   updateUser(user: any, id: any) {
     return this.http.put('https://jsonplaceholder.typicode.com/users/' + id, user)
   }
