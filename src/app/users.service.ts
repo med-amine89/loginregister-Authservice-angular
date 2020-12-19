@@ -10,23 +10,20 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(){
-     return this.http.get('https://jsonplaceholder.typicode.com/users')
-     
+  getUsers() {
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
+
   }
 
-  addUser(user: any)
-  {
+  addUser(user: any) {
     return this.http.post('https://jsonplaceholder.typicode.com/users', user)
   }
 
-  updateUser(user: any, id : any)
-  {
-    return this.http.put('https://jsonplaceholder.typicode.com/users/'+ id, user)
+  updateUser(user: any, id: any) {
+    return this.http.put('https://jsonplaceholder.typicode.com/users/' + id, user)
   }
 
-  deleteUser(id : any)
-  {
-    return this.http.delete('https://jsonplaceholder.typicode.com/users/'+ id)
+  deleteUser(id: any) {
+    return this.http.delete('https://jsonplaceholder.typicode.com/users/' + id)
   }
 }

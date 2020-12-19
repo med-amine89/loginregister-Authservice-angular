@@ -10,19 +10,19 @@ export class ListUsersComponent implements OnInit {
 
   users = [];
   // isupdate= true;
-  userObj={
-    id:'',
-    email:'',
-    password:'',
-    name:'',
-    lastname:'',
+  userObj = {
+    id: '',
+    email: '',
+    password: '',
+    name: '',
+    lastname: '',
   }
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
     this.getUsers();
-    
+
   }
 
   getUsers() {
@@ -31,15 +31,15 @@ export class ListUsersComponent implements OnInit {
     })
   }
 
-  deleteUser(id : any){
-    this.usersService.deleteUser(id).subscribe(()=>{
-    this.users = this.users.filter
-    (user => user.id != id)
+  deleteUser(id: any) {
+    this.usersService.deleteUser(id).subscribe(() => {
+      this.users = this.users.filter
+        (user => user.id != id)
     })
   }
 
-  updateUser(user: any, id : any){
-    this.userObj = user
-  }
+  // updateUser(user: any, id: any) {
+  //   this.userObj = user
+  // }
 
 }
