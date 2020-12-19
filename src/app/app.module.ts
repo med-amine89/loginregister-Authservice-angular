@@ -9,16 +9,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { from } from 'rxjs';
 import { AuthService } from './auth.service';
 import { RouterModule} from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { P404Component } from './p404/p404.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    FooterComponent,
+    P404Component,
+    DashboardComponent,
+    UserAddComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,

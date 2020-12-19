@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { FormControl, FormGroup, Validators, } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   submited: boolean = false;
   
   
-  constructor(private authservice: AuthService) { }
+  constructor(private authservice: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -33,9 +34,10 @@ export class RegisterComponent implements OnInit {
     if (this.registrationForm.value.invalid) {
       return;
     }
-   console.log(this.registrationForm.value);  
    this.user = Object.assign(this.user, this.registrationForm.value);
    this.authservice.addUser(this.user);
+   // redirecty to login
+   this.router.navigateByUrl('/login');
 }
   
 }
