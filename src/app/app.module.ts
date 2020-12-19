@@ -17,6 +17,7 @@ import { P404Component } from './p404/p404.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     P404Component,
     DashboardComponent,
     UserAddComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    ListUsersComponent
   ],
   imports: [
     BrowserModule,

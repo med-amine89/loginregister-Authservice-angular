@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   registration: any;
   submited: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -29,7 +30,15 @@ export class LoginComponent implements OnInit {
     if (this.registrationForm.value.invalid) {
       return;
     }
-    const user = this.authService.authUser(this.registrationForm.value);
+    const userFound = this.authService.authUser(this.registrationForm.value);
+    if(userFound !== undefined)
+    {
+      // redirect to  path dashboard
+        this.router.navigate(['dashboard']);
+    }
+    else {
+      // show alert worning (toster service)
+    }
   }
  
 }
