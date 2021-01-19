@@ -40,7 +40,10 @@ export class ListUsersComponent implements OnInit {
   }
 
   updateUser(user: any, id: any) {
+    this.router.navigate(['users/update/:id']);
+  }
+  
+  addUser(user: any){
     this.router.navigate(['users/add']);
   }
-
 }
