@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 export class ListUsersComponent implements OnInit {
 
   users = [];
-  // isupdate= true;
+  
   userObj = {
     id: '',
     email: '',
     password: '',
     name: '',
-    lastname: '',
+    lastname: ''
   }
 
   constructor(private usersService: UsersService, private router: Router) { }
@@ -43,7 +43,7 @@ export class ListUsersComponent implements OnInit {
     this.router.navigate(['users/update/:id']);
   }
   
-  addUser(user: any){
+  AddUser() {
     this.router.navigate(['users/add']);
   }
 }

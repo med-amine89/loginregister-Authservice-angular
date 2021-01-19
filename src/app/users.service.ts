@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class UsersService {
   createUser: any;
   delete: any;
+  update: any;
 
   constructor(private http: HttpClient) { }
 

@@ -1,9 +1,9 @@
-<form class="mt-4">
+<form class="mt-4" [formGroup]="addForm">
     <!-- email -->
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <input type="email" [(ngModel)]="userObj.email" class="form-control" id="email" placeholder="Email" formControlName="email">
         </div>
     </div>
   <br>
@@ -11,7 +11,7 @@
     <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <input type="password" [(ngModel)]="userObj.password" class="form-control" id="password" placeholder="Password" formControlName="password">
         </div>
     </div>
 <br>
@@ -19,7 +19,7 @@
     <div class="form-group row">
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-            <input type="name" class="form-control" id="name" placeholder="name">
+            <input type="name" [(ngModel)]="userObj.name" class="form-control" id="name" placeholder="name" formControlName="name">
         </div>
     </div>
 <br>
@@ -27,8 +27,8 @@
     <div class="form-group row">
         <label for="lastname" class="col-sm-2 col-form-label">Lastame</label>
         <div class="col-sm-10">
-            <input type="lastname" class="form-control" id="lastname" placeholder="lastname">
+            <input type="lastname" [(ngModel)]="userObj.lastname" class="form-control" id="lastname" placeholder="lastname" formControlName="lastname">
         </div>
     </div>
-    <button type="button" class="btn btn-success mt-4">Update</button>
+    <button type="button" class="btn btn-success mt-4" (click)="updateUser()">Update</button>
 </form>

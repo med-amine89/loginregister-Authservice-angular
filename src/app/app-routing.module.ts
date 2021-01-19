@@ -7,6 +7,7 @@ import { P404Component } from './p404/p404.component';
 import { RegisterComponent } from './register/register.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   // {
@@ -45,7 +46,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    HttpClientModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
